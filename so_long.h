@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:29:09 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/18 14:48:14 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:53:21 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int		read_map_axe_y(t_display_map *map);
 int		error_wall_up_bottom(t_display_map *map);
 int		error_wall_left_right(t_display_map *map);
 int		error_check_exit(t_display_map *map);
+int		error_check_invalid_letter(t_display_map *map);
 int		error_check_multiple_exits(t_display_map *map);
 int		error_check_item(t_display_map *map);
 int		error_check_player(t_display_map *map);

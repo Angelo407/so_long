@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:41:37 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/18 13:24:51 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:03:15 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,12 @@ int	move_right(int key, t_display_map *map)
 		mlx_put_image_to_window(map->mlx_ptr, map->win_ptr,
 			map->player, map->p_x, map->p_y);
 		move_count(key, map);
-	}
-	if (map->str[map->p_y / 50][map->p_x / 50] == 'C')
+		if (map->str[map->p_y / 50][map->p_x / 50] == 'C')
 		mlx_put_image_to_window(map->mlx_ptr, map->win_ptr,
-			map->background, map->p_x, map->p_y);
-	mlx_put_image_to_window(map->mlx_ptr, map->win_ptr,
+		map->background, map->p_x, map->p_y);
+		mlx_put_image_to_window(map->mlx_ptr, map->win_ptr,
 		map->player, map->p_x, map->p_y);
+	}
+
 	return (0);
 }

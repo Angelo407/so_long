@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:37:03 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/17 19:01:29 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/19 18:36:29 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	move_count(int key, t_display_map *map)
 {
+	(void)key;
 	map->step_number++;
 	ft_printf("Nombre de mouvements : %d\n", map->step_number);
 	return (0);

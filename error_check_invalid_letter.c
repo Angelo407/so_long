@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_check_exit.c                                 :+:      :+:    :+:   */
+/*   error_check_invalid_letter.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 17:33:10 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 15:23:47 by aprosper         ###   ########.fr       */
+/*   Created: 2022/05/19 14:33:54 by aprosper          #+#    #+#             */
+/*   Updated: 2022/05/19 18:50:52 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	error_check_exit(t_display_map *map)
+int	error_check_invalid_letter(t_display_map *map)
 {
 	int		fd;
 	int		i;
+	int		k;
 	char	**str;
+	char	*str2;
 
 	fd = open(map->map, O_RDONLY);
 	i = 0;
@@ -24,36 +26,23 @@ int	error_check_exit(t_display_map *map)
 	while (i < read_map_axe_y(map))
 	{
 		str[i] = get_next_line(fd);
-		if (ft_strchr(str[i], 'E') != NULL)
+		str2 = str[i];
+		
+		k = 0;
+		printf("%s\n", str2);
+		while (str2[k] != '\n')
 		{
-			free_str(str, i + 1);
-			return (0);
-		}
-		else
-			i++;
-	}
-	ft_printf("Erreur\nIl manque une sortie !\n");
-	free_str(str, read_map_axe_y(map));
-	free(map->map);
-	exit(0);
-}
-
-void	free_str(char **str, int line)
-{
-	t_errors	errors;
-	int			i;
-
-	i = 0;
-	while (i < line)
-	{
-		if (str[i])
-		{
-			if (str[i])
-				free(str[i]);
+			if (str2[k] == '1' || str2[k] == '0')
+				k++;
+			else
+			{
+				printf("Erreur\nIl y a un ou plusieurs caractère(s) invalide(s) dans la map !\n");
+				exit(0);
+			}
 		}
 		i++;
 	}
-	if (str)
-		free(str);
-	close (errors.fd);
+	
+//	free_str(str, i + 1);
+	return (0);
 }

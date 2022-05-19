@@ -1,7 +1,7 @@
 NAME = so_long
 
 CC = gcc
-CFLAG = -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit
+CFLAG = -g3 -fsanitize=address -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 RM = rm
 RMFLAG = -f
@@ -34,6 +34,7 @@ SRC_SO_LONG =	\
 	catch_collectible.c	\
 	deal_key.c	\
 	error_check_exit.c	\
+	error_check_invalid_letter.c	\
 	error_check_multiple_exits.c	\
 	error_check_item.c	\
 	error_check_player.c	\
@@ -69,11 +70,11 @@ fclean : clean
 	make clean -C mlx
 
 re : fclean all
-	make re -C mlx
+	#make re -C mlx
 
 .c.o : $(SRCS) $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME) : $(OBJS)
 	make all -C mlx
-	$(CC) $(OBJS) $(CFLAG) -o $(NAME)
+	$(CC) $(SRCS) $(CFLAG) -o $(NAME)

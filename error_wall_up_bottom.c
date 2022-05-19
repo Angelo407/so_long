@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:54 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 12:08:15 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:29:29 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	error_wall_up_bottom(t_display_map *map)
 			ft_printf("Erreur\nMur haut et/ou bas non conforme !\n");
 			free_str(errors.str, errors.i);
 			free (map->map);
-			exit(0);
+			exit (0);
 		}
 		errors.j++;
 	}
