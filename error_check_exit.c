@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:33:10 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 15:23:47 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:14:01 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	error_check_exit(t_display_map *map)
 	}
 	ft_printf("Erreur\nIl manque une sortie !\n");
 	free_str(str, read_map_axe_y(map));
-	free(map->map);
-	exit(0);
+	return (1);
 }
 
 void	free_str(char **str, int line)

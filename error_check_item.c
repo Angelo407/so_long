@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:33:36 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 12:08:32 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:14:09 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ int	error_check_item(t_display_map *map)
 	}
 	ft_printf("Erreur\nIl manque un item !\n");
 	free_str(str, read_map_axe_y(map));
-	free (map->map);
-	exit(0);
+	return (1);
 }

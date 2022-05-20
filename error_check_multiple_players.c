@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:52:45 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 12:00:14 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:14:17 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	error_check_multiple_players(t_display_map *map)
 		{
 			ft_printf("Erreur\nIl y a plus d'un player !\n");
 			free_str(errors.str, errors.i + 1);
-			free (map->map);
-			exit (0);
+			return (1);
 		}	
 		errors.i++;
 	}

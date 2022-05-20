@@ -1,7 +1,7 @@
 NAME = so_long
 
 CC = gcc
-CFLAG = -g3 -fsanitize=address -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit
+CFLAG = -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 RM = rm
 RMFLAG = -f
@@ -70,7 +70,7 @@ fclean : clean
 	make clean -C mlx
 
 re : fclean all
-	#make re -C mlx
+	make re -C mlx
 
 .c.o : $(SRCS) $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)

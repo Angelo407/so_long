@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 12:10:59 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 12:05:01 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:14:27 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	error_check_rectangle(t_display_map *map)
 		{
 			ft_printf("Erreur\nLa map n'est pas rectangle !\n");
 			free(line);
-			exit(0);
+			return (1);
 		}
 		i++;
 		free(line);

@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:33 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/19 12:06:54 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:14:32 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int	error_wall_left_right(t_display_map *map)
 		{
 			ft_printf("Erreur\nMur de gauche et/ou droite non conforme !\n");
 			free_str(errors.str, read_map_axe_y(map));
-			free(map->map);
-			exit(0);
+			return (1);
 		}
 		errors.i++;
 	}
